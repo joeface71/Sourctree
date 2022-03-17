@@ -9,6 +9,7 @@ public class Testing : MonoBehaviour
     public delegate bool TestBoolDelegate(int i);
 
     public Action<int> testAction;
+    public Func<int, bool> testBoolFunc;
 
     private TestDelegate testDelegateFunction;
     private TestBoolDelegate testBoolDelegate;
@@ -19,10 +20,18 @@ public class Testing : MonoBehaviour
     {
         testBoolDelegate = MyTestBoolDelegateFunction;
         testAction = MyTestAction;
+        testBoolFunc = MyTestBoolFunc;
 
         Debug.Log(testBoolDelegate(6));
         testAction(5);
+        Debug.Log(MyTestBoolFunc(11));
 
+
+    }
+
+    private bool MyTestBoolFunc(int i)
+    {
+        return i > 10;
     }
 
     private void MyTestAction(int i)
