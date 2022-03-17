@@ -6,11 +6,12 @@ public class Testing : MonoBehaviour
 {
     public delegate void TestDelegate();
     public delegate bool TestBoolDelegate(int i);
-    
+
     private TestDelegate testDelegateFunction;
     private TestBoolDelegate testBoolDelegate;
 
-    private void Start() {
+    private void Start()
+    {
         testBoolDelegate = MyTestBoolDelegateFunction;
 
         Debug.Log(testBoolDelegate(6));
@@ -28,7 +29,9 @@ public class Testing : MonoBehaviour
 
     private bool MyTestBoolDelegateFunction(int i)
     {
-        return i > 5;
+        if (i > 5)
+            return true;
+        return false;
     }
-    
+
 }
