@@ -24,7 +24,7 @@ public class Testing : MonoBehaviour
 
         Debug.Log(testBoolDelegate(6));
         testAction(5);
-        Debug.Log(MyTestBoolFunc(11, 5));
+        Debug.Log(MyTestBoolFunc(4, 5));
 
 
     }
